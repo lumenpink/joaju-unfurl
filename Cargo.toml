@@ -1,0 +1,33 @@
+[package]
+name = "unfurl-rs"
+version = "0.1.0-dev.1"
+edition = "2021"
+description = "Motor soberano em Rust para extração de metadados OpenGraph com blindagem SSRF e cartões visuais"
+license = "Apache-2.0"
+repository = "https://codeberg.org/lumenpink/unfurl-rs"
+authors = ["Lumen Pink <hi@lumen.pink>"]
+
+[dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"] }
+scraper = "0.22"
+base64 = "0.22"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+tokio = { version = "1.38", features = ["full"] }
+clap = { version = "4.5", features = ["derive"], optional = true }
+
+[dev-dependencies]
+
+[features]
+default = ["cli"]
+cli = ["dep:clap"]
+
+[[bin]]
+name = "unfurl-rs"
+path = "src/main.rs"
+required-features = ["cli"]
+
+[lib]
+name = "unfurl_rs"
+path = "src/lib.rs"
