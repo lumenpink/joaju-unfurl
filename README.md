@@ -7,8 +7,8 @@
 
 Motor soberano em Rust para extração determinística de metadados OpenGraph com blindagem contra Server-Side Request Forgery (SSRF) e renderizador de cartões visuais para Typst e Web.
 
-> ⚠️ **Aviso de Versão em Desenvolvimento Ativo (pre-1.0 / dev)**  
-> Este crate encontra-se em desenvolvimento inicial ativo (`0.1.x`). Mudanças na API pública e aperfeiçoamentos estruturais podem ocorrer antes da versão 1.0.0 estável. Feedback e contribuições são muito bem-vindos!
+> ⚠️ **Early Development Notice (pre-1.0 / alpha)**  
+> This library is currently in early active development (`0.1.0`). It is NOT recommended for production use beyond experimental testing and research. APIs are subject to breaking changes prior to a stable 1.0.0 release.
 
 ---
 
@@ -30,7 +30,7 @@ Adicione `unfurl-rs` ao seu `Cargo.toml`:
 
 ```toml
 [dependencies]
-unfurl-rs = "0.1.0-dev.1"
+unfurl-rs = "0.1.0"
 ```
 
 Ou instale a CLI:
