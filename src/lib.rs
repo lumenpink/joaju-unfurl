@@ -1,21 +1,21 @@
 //! # joaju-unfurl
 //!
-//! Motor soberano em Rust para extração de metadados OpenGraph com blindagem contra
-//! Server-Side Request Forgery (SSRF) e renderizador de cartões visuais para Typst.
+//! A fast and secure Rust library for OpenGraph metadata extraction
+//! with SSRF defensive protection and visual preview card rendering for Typst.
 //!
 //! > ⚠️ **Early Development Notice (pre-1.0 / alpha)**: This library is currently in early
 //! > active development (`0.1.0`). It is NOT recommended for production use beyond experimental
 //! > testing and research. APIs are subject to breaking changes prior to a stable 1.0.0 release.
 //!
-//! ## Exemplo Rápido
+//! ## Quick Example
 //!
 //! ```rust
 //! use joaju_unfurl::extract_metadata;
 //!
-//! let html = r#"<title>Exemplo</title><meta property="og:description" content="Desc">"#;
-//! let meta = extract_metadata(html, "https://exemplo.org").unwrap();
-//! assert_eq!(meta.title.as_deref(), Some("Exemplo"));
-//! assert_eq!(meta.domain, "exemplo.org");
+//! let html = r#"<title>Example</title><meta property="og:description" content="Desc">"#;
+//! let meta = extract_metadata(html, "https://example.org").unwrap();
+//! assert_eq!(meta.title.as_deref(), Some("Example"));
+//! assert_eq!(meta.domain, "example.org");
 //! ```
 
 use reqwest::Url;
@@ -26,16 +26,16 @@ use thiserror::Error;
 
 #[derive(Error, Debug)]
 pub enum UnfurlError {
-    #[error("URL inválida ou ausente: {0}")]
+    #[error("Invalid or missing URL: {0}")]
     InvalidUrl(String),
 
-    #[error("Acesso bloqueado por segurança (SSRF): {0}")]
+    #[error("Access blocked for security reasons (SSRF): {0}")]
     SsrfBlocked(String),
 
-    #[error("Erro de requisição HTTP: {0}")]
+    #[error("HTTP request error: {0}")]
     Http(#[from] reqwest::Error),
 
-    #[error("Erro de parsing")]
+    #[error("Parsing error")]
     ParseError,
 }
 

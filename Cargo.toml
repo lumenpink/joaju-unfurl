@@ -2,7 +2,7 @@
 name = "joaju-unfurl"
 version = "0.1.0"
 edition = "2021"
-description = "Motor soberano em Rust para extração de metadados OpenGraph com blindagem SSRF e cartões visuais"
+description = "A fast and secure Rust library for OpenGraph metadata extraction with SSRF protection and visual card rendering"
 license = "Apache-2.0"
 repository = "https://codeberg.org/lumenpink/joaju-unfurl"
 homepage = "https://codeberg.org/lumenpink/joaju-unfurl"

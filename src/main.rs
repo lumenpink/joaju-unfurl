@@ -4,13 +4,13 @@ use joaju_unfurl::{fetch_and_unfurl, render_unfurl_typst_card};
 #[derive(Parser, Debug)]
 #[command(name = "joaju-unfurl")]
 #[command(
-    about = "Motor soberano em Rust para extração de metadados OpenGraph com blindagem SSRF e cartões visuais"
+    about = "A fast and secure Rust CLI for OpenGraph metadata extraction with SSRF protection and visual card rendering"
 )]
 struct Cli {
-    /// URL para extrair metadados e gerar cartão
+    /// URL to unfurl and extract metadata from
     url: String,
 
-    /// Emitir formato de cartão Typst em vez de JSON
+    /// Output Typst visual card format instead of JSON
     #[arg(short, long)]
     typst: bool,
 }
