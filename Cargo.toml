@@ -5,6 +5,11 @@ edition = "2021"
 description = "Motor soberano em Rust para extração de metadados OpenGraph com blindagem SSRF e cartões visuais"
 license = "Apache-2.0"
 repository = "https://codeberg.org/lumenpink/unfurl-rs"
+homepage = "https://codeberg.org/lumenpink/unfurl-rs"
+documentation = "https://docs.rs/unfurl-rs"
+readme = "README.md"
+keywords = ["opengraph", "unfurl", "metadata", "scraper", "ssrf-protection"]
+categories = ["web-programming", "network-programming", "command-line-utilities"]
 authors = ["Lumen Pink <hi@lumen.pink>"]
 
 [dependencies]

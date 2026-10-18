@@ -1,3 +1,23 @@
+//! # unfurl-rs
+//!
+//! Motor soberano em Rust para extração de metadados OpenGraph com blindagem contra
+//! Server-Side Request Forgery (SSRF) e renderizador de cartões visuais para Typst.
+//!
+//! > ⚠️ **Aviso de Versão em Desenvolvimento Ativo (pre-1.0 / dev)**: Esta biblioteca
+//! > está em fase inicial de desenvolvimento ativo (`0.1.x`). A API pública pode
+//! > sofrer ajustes antes da versão estável 1.0.0.
+//!
+//! ## Exemplo Rápido
+//!
+//! ```rust
+//! use unfurl_rs::extract_metadata;
+//!
+//! let html = r#"<title>Exemplo</title><meta property="og:description" content="Desc">"#;
+//! let meta = extract_metadata(html, "https://exemplo.org").unwrap();
+//! assert_eq!(meta.title.as_deref(), Some("Exemplo"));
+//! assert_eq!(meta.domain, "exemplo.org");
+//! ```
+
 use reqwest::Url;
 use scraper::{Html, Selector};
 use serde::{Deserialize, Serialize};
