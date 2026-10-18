@@ -1,4 +1,4 @@
-use unfurl_rs::{extract_metadata, is_ssrf_risk, render_unfurl_typst_card, ExtractedMetadata};
+use joaju_unfurl::{extract_metadata, is_ssrf_risk, render_unfurl_typst_card, ExtractedMetadata};
 
 #[test]
 fn test_ssrf_blocking() {

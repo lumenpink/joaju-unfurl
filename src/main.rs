@@ -1,8 +1,8 @@
 use clap::Parser;
-use unfurl_rs::{fetch_and_unfurl, render_unfurl_typst_card};
+use joaju_unfurl::{fetch_and_unfurl, render_unfurl_typst_card};
 
 #[derive(Parser, Debug)]
-#[command(name = "unfurl-rs")]
+#[command(name = "joaju-unfurl")]
 #[command(
     about = "Motor soberano em Rust para extração de metadados OpenGraph com blindagem SSRF e cartões visuais"
 )]

@@ -1,12 +1,12 @@
 [package]
-name = "unfurl-rs"
+name = "joaju-unfurl"
 version = "0.1.0"
 edition = "2021"
 description = "Motor soberano em Rust para extração de metadados OpenGraph com blindagem SSRF e cartões visuais"
 license = "Apache-2.0"
-repository = "https://codeberg.org/lumenpink/unfurl-rs"
-homepage = "https://codeberg.org/lumenpink/unfurl-rs"
-documentation = "https://docs.rs/unfurl-rs"
+repository = "https://codeberg.org/lumenpink/joaju-unfurl"
+homepage = "https://codeberg.org/lumenpink/joaju-unfurl"
+documentation = "https://docs.rs/joaju-unfurl"
 readme = "README.md"
 keywords = ["opengraph", "unfurl", "metadata", "scraper", "ssrf-protection"]
 categories = ["web-programming", "network-programming", "command-line-utilities"]
@@ -29,10 +29,10 @@ default = ["cli"]
 cli = ["dep:clap"]
 
 [[bin]]
-name = "unfurl-rs"
+name = "joaju-unfurl"
 path = "src/main.rs"
 required-features = ["cli"]
 
 [lib]
-name = "unfurl_rs"
+name = "joaju_unfurl"
 path = "src/lib.rs"

@@ -1,7 +1,7 @@
-# unfurl-rs
+# joaju-unfurl
 
-[![crates.io](https://img.shields.io/crates/v/unfurl-rs.svg)](https://crates.io/crates/unfurl-rs)
-[![docs.rs](https://docs.rs/unfurl-rs/badge.svg)](https://docs.rs/unfurl-rs)
+[![crates.io](https://img.shields.io/crates/v/joaju-unfurl.svg)](https://crates.io/crates/joaju-unfurl)
+[![docs.rs](https://docs.rs/joaju-unfurl/badge.svg)](https://docs.rs/joaju-unfurl)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![GOST](https://img.shields.io/badge/GOST-1.1.0-emerald.svg)](https://codeberg.org/lumenpink/gost)
 
@@ -14,7 +14,7 @@ Motor soberano em Rust para extração determinística de metadados OpenGraph co
 
 ## 📖 Visão Geral
 
-`unfurl-rs` oferece uma solução robusta e segura para pré-visualização de links (unfurling), muito comum em aplicativos de mensagens, fóruns e geradores de documentos (como Typst e LaTeX).
+`joaju-unfurl` oferece uma solução robusta e segura para pré-visualização de links (unfurling), muito comum em aplicativos de mensagens, fóruns e geradores de documentos (como Typst e LaTeX).
 
 ### Principais Funcionalidades:
 - **Blindagem Anti-SSRF:** Bloqueia automaticamente acessos a endereços privados (`127.0.0.1`, `localhost`, redes `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `::1` e domínios `.local`).
@@ -26,17 +26,17 @@ Motor soberano em Rust para extração determinística de metadados OpenGraph co
 
 ## 🚀 Instalação
 
-Adicione `unfurl-rs` ao seu `Cargo.toml`:
+Adicione `joaju-unfurl` ao seu `Cargo.toml`:
 
 ```toml
 [dependencies]
-unfurl-rs = "0.1.0"
+joaju-unfurl = "0.1.0"
 ```
 
 Ou instale a CLI:
 
 ```bash
-cargo install unfurl-rs
+cargo install joaju-unfurl
 ```
 
 ---
@@ -46,7 +46,7 @@ cargo install unfurl-rs
 ### 1. Extração direta a partir de HTML em memória (Zero I/O)
 
 ```rust
-use unfurl_rs::extract_metadata;
+use joaju_unfurl::extract_metadata;
 
 let html = r#"
 <!DOCTYPE html>
@@ -75,7 +75,7 @@ assert!(meta.has_article);
 ### 2. Requisição Assíncrona com Blindagem SSRF
 
 ```rust,no_run
-use unfurl_rs::{fetch_and_unfurl, render_unfurl_typst_card};
+use joaju_unfurl::{fetch_and_unfurl, render_unfurl_typst_card};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -99,10 +99,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ```bash
 # Extrair metadados e retornar JSON
-unfurl-rs fetch "https://exemplo.org"
+joaju-unfurl fetch "https://exemplo.org"
 
 # Gerar cartão para documento Typst
-unfurl-rs card "https://exemplo.org"
+joaju-unfurl card "https://exemplo.org"
 ```
 
 ---

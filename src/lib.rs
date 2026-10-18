@@ -1,4 +1,4 @@
-//! # unfurl-rs
+//! # joaju-unfurl
 //!
 //! Motor soberano em Rust para extração de metadados OpenGraph com blindagem contra
 //! Server-Side Request Forgery (SSRF) e renderizador de cartões visuais para Typst.
@@ -10,7 +10,7 @@
 //! ## Exemplo Rápido
 //!
 //! ```rust
-//! use unfurl_rs::extract_metadata;
+//! use joaju_unfurl::extract_metadata;
 //!
 //! let html = r#"<title>Exemplo</title><meta property="og:description" content="Desc">"#;
 //! let meta = extract_metadata(html, "https://exemplo.org").unwrap();
