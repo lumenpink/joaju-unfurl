@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Remoção de campo `permissions:` incompatível com Forgejo Actions (closes #8).
+
 ### Added
 - Esteira GitOps unificada, publicação no registry lumen e cascata downstream para joaju (closes #6).
 - Inicialização do repositório em conformidade com o padrão GOST.
