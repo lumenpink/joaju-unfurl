@@ -61,4 +61,9 @@ if ! grep -q "repos/lumenpink/joaju/actions/workflows/ci.yaml/dispatches" "$WORK
   exit 1
 fi
 
+if ! grep -q 'token = "Bearer %s"' "$WORKFLOW"; then
+  echo "✘ [FALHA] $WORKFLOW nao utiliza autenticacao Bearer para o cargo!"
+  exit 1
+fi
+
 echo "✔ [PASS] Auditoria GitOps cascade em joaju-unfurl validada com sucesso."
