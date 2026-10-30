@@ -13,10 +13,17 @@ if [ "$LINE_COUNT" -gt 50 ]; then
     exit 1
 fi
 
-# Mutacao
+# Mutacao: testar que o script detecta ultrapassagem do limite
 TMP_MUTATION=$(mktemp)
-cat "$README_FILE" > "$TMP_MUTATION"
-echo "" >> "$TMP_MUTATION"
+python3 -c "
+with open('$README_FILE') as f:
+    lines = f.readlines()
+# Adicionar linhas ate exceder 50
+while len(lines) <= 50:
+    lines.append('\n')
+with open('$TMP_MUTATION', 'w') as f:
+    f.writelines(lines)
+"
 MUT_COUNT=$(wc -l < "$TMP_MUTATION")
 if [ "$MUT_COUNT" -le 50 ]; then
     echo "❌ FALHOU na mutacao."
