@@ -12,3 +12,9 @@ Alinhamento do repositório `joaju-unfurl` ao perfil `lilya` (`https://lilya.2lp
 ## 3. Critérios de Aceitação
 - Testes unitários e testes de cascata GitOps 100% aprovados.
 - 100% de conformidade com `cccp check --strict`.
+
+
+## 4. Conclusão da Fase 9
+- Workflow renomeado para `.forgejo/workflows/ci.yml`.
+- Auditoria `tests/audit_gitops_cascade.sh` 100% verde.
+- Perfil GOST alinhado para Lilya e vocabulário higienizado.
